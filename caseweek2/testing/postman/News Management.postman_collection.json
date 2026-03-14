@@ -1,0 +1,210 @@
+{
+  "info": {
+    "_postman_id": "ebec5f86-cdde-4070-8622-54a543f04245",
+    "name": "News Management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36251988"
+  },
+  "item": [
+    {
+      "name": "{{base_url}}/api/addNews/",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "judul",
+              "value": "Teknologi AI Membantu Dunia Pendidikanv19",
+              "type": "text",
+              "uuid": "a049f25f-b704-4092-85e5-a094a5cd27f2"
+            },
+            {
+              "key": "konten",
+              "value": "Penggunaan kecerdasan buatan dalam dunia pendidikan membantu guru dan siswa dalam proses belajar yang lebih interaktif.",
+              "type": "text",
+              "uuid": "383d40e2-2b8f-415f-8439-9dc4c2a8b1ed"
+            },
+            {
+              "key": "penulis",
+              "value": "Andi Pratama",
+              "type": "text",
+              "uuid": "169baa24-4cf6-4d93-8a13-147d9ed6e41a"
+            },
+            {
+              "key": "published",
+              "value": "true",
+              "type": "text",
+              "uuid": "2185d72c-ed07-41d6-946a-29599cf54cbf"
+            },
+            {
+              "key": "thumbnail",
+              "type": "file",
+              "uuid": "e81770e8-7f62-4063-bb7e-26dd5f5abbff",
+              "src": "/F:/Downloads/confusion_matrix.png"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/api/addNews/",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "addNews",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/api/addNews/ Copy",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "judul",
+              "value": "Teknologi AI Membantu Dunia Pendidikanv13",
+              "type": "text",
+              "uuid": "a049f25f-b704-4092-85e5-a094a5cd27f2"
+            },
+            {
+              "key": "konten",
+              "value": "Penggunaan kecerdasan buatan dalam dunia pendidikan membantu guru dan siswa dalam proses belajar yang lebih interaktif.",
+              "type": "text",
+              "uuid": "383d40e2-2b8f-415f-8439-9dc4c2a8b1ed"
+            },
+            {
+              "key": "penulis",
+              "value": "Andi Pratama",
+              "type": "text",
+              "uuid": "169baa24-4cf6-4d93-8a13-147d9ed6e41a"
+            },
+            {
+              "key": "published",
+              "value": "true",
+              "type": "text",
+              "uuid": "2185d72c-ed07-41d6-946a-29599cf54cbf"
+            },
+            {
+              "key": "thumbnail",
+              "type": "file",
+              "uuid": "e81770e8-7f62-4063-bb7e-26dd5f5abbff",
+              "src": "/F:/Downloads/pic.png"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/api/editNews/4",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "editNews",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/api/searchNews/Perkembangan%20Teknologi%20AI%20di%20Tahun%202026",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": []
+        },
+        "url": {
+          "raw": "{{base_url}}/api/searchNews/Perkembangan%20Teknologi%20AI%20di%20Tahun%202026",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "searchNews",
+            "Perkembangan%20Teknologi%20AI%20di%20Tahun%202026"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/api/deleteNews/22",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/deleteNews/6",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "deleteNews",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/api/listNews/",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/listNews/",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "listNews",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/api/publishNews/Peluncuran%20Kendaraan%20Listrik%20Terbaru",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/publishNews/Peluncuran%20Kendaraan%20Listrik%20Terbaru",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "publishNews",
+            "Peluncuran%20Kendaraan%20Listrik%20Terbaru"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
