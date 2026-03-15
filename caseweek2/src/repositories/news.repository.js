@@ -1,4 +1,4 @@
-import { prisma } from "./news.prisma.instantiate.js"
+import { prisma } from "../config/news.prisma.instantiate.js"
 
 
 class NewsRepository {

@@ -1,23 +1,23 @@
 import NewsServices from "../services/news.services.js" 
 
 class NewsController {
-    static async listNews(req,res) {
+    static async listNews(req,res,next) {
         try {
             const listNewsService = await NewsServices.listNewsServices()
 
             return res.status(201).json(listNewsService)
         } catch (err) {
-            return res.status(500).json({ message: err.message })
+            next(err);
         }
     }
 
-    static async addNews(req,res){
+    static async addNews(req,res,next){
         try {
             const addNewsService = await NewsServices.createNewsServices(req.body,req.file);
         
             return res.status(201).json(addNewsService);
         } catch (err) {
-            return res.status(500).json({ message: err.message })
+            next(err);
         }
         
     }
@@ -33,7 +33,7 @@ class NewsController {
 
             return res.status(201).json(editNewsService)
         }catch(err) {
-            return res.status(500).json({message : err.message});
+            next(err);
         }
     }
 
@@ -47,7 +47,7 @@ class NewsController {
             return res.status(201).json(deleteNewsService);
 
         }catch (err){
-            return res.status(500).json({message : err.message});
+            next(err);
         }
     }
     static async publishNews(req,res){
@@ -58,7 +58,7 @@ class NewsController {
 
             return res.status(201).json(publishNewsService);
         }catch (err){
-            return res.status(500).json({message : err.message});
+            next(err);
         }
     }
 
@@ -69,7 +69,7 @@ class NewsController {
             const searchNewsService = await NewsServices.searchNewsServices(judul);
             return res.status(201).json(searchNewsService);
         } catch(err){
-            return res.status(500).json({message : err.message});
+            next(err);
         }
     }
     
