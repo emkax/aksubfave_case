@@ -1,0 +1,28 @@
+import UserServices from "../services/user.service.js";
+
+
+class UserController{
+    static async registerUser(req,res,next){
+        try{
+            const userRegistration = await UserServices.userRegister(req.body);
+
+            return res.status(201).json({message : "succesfuly registered user",data : userRegistration.data,token:userRegistration.token});
+        }catch (err){
+            next(err);
+        }
+    }
+    static async loginUser(req,res,next){
+        try{
+            const userLogin = await UserServices.userLogin(req.body);
+            
+            return res.status(200).json({message : "succesfully login",data : userLogin});
+        }catch (err){
+            next(err);
+        }
+    
+    }
+
+    static async 
+}
+
+export default UserController;
