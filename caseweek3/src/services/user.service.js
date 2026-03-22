@@ -57,7 +57,7 @@ class UserServices{
 
         
         if (!loginedUser){
-            return {message:"email not found"};
+            throw new Error("email not found");
         }
 
         const isMatch = await bcrypt.compare(password, loginedUser.password);
@@ -76,9 +76,19 @@ class UserServices{
 
         const { password: _, ...safeUser } = loginedUser;
 
-        return {email : safeUser.email,token : jwt_token};
+        return {user : safeUser,token : jwt_token};
     }
+    static async assignRole(email,role){
 
+        const modifyRole = UserRepository.modifyRole(email,role);
+        if (!modifyRole){
+            throw new Error("failed to modify role");
+        }
+
+        const { password: _, ...safeUser } = loginedUser;
+
+        return {user : safeUser};
+    }
 }
 
 export default UserServices;

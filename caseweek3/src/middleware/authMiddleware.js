@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import UserRepository from "../repositories/user.repository.js";
 
 class authMiddleware{
     static async authJWT (req,res,next) {
@@ -26,13 +27,30 @@ class authMiddleware{
         }
     }
 
-    static async authorize(allowedRoles){
-        return (req,res,next) => {
-            if (!req.user()){
-                return res.status(401).json({message : "unathorized"})
-            }
+    static authorize(allowedRoles = []){
+        return async (req,res,next) => {
+            try{
+                if (!req.user){
+                    return res.status(401).json({message : "unathorized"})
+                }
 
-            if (!allowedRoles)
+                
+                const {email} = req.user;
+                const getUserRole = await UserRepository.findByEmail(email);
+                
+                if (!getUserRole) {
+                    return res.status(401).json({message: "User not found",});
+                }
+
+                if (!allowedRoles.includes(getUserRole.role)){
+                    res.status(403).json({message : "Forbidden : role not allowed"});
+                }
+
+                next();
+            }catch(err){
+                next(err);
+            }
+            
         }
     }
 }

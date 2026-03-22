@@ -22,7 +22,15 @@ class UserController{
     
     }
 
-    static async 
+    static async assignRole(req,res,next){
+        try{
+            const assginedRole = await UserServices.assignRole(req.user.email,req.role);
+
+            return res.status(201).json({message : "succesfully assigned role",data : assginedRole});
+        }catch(err){
+            next(err);
+        }
+    } 
 }
 
 export default UserController;

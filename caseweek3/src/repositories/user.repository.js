@@ -21,6 +21,14 @@ class UserRepository{
         });
         return user;
     }
+
+    static async assignRole(email,newRole){
+        const assignedRoleUser = await prisma.users.update({
+            where : {email},
+            data : {role: newRole}
+        });
+        return assignedRoleUser;        
+    }
 }
 
 export default UserRepository;
