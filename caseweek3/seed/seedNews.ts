@@ -1,5 +1,4 @@
-import { prisma } from "../src/utils/dbInstantiate.ts";
-
+import { prisma } from "../src/config/prisma.instantiate.js";
 async function main() {
     const seeds = [
     {

@@ -80,14 +80,14 @@ class UserServices{
     }
     static async assignRole(email,role){
 
-        const modifyRole = UserRepository.modifyRole(email,role);
-        if (!modifyRole){
+        const modifiedRole = await UserRepository.assignRole(email,role);
+        if (!modifiedRole){
             throw new Error("failed to modify role");
         }
 
-        const { password: _, ...safeUser } = loginedUser;
+        const { password: _, ...safeUser } = modifiedRole;
 
-        return {user : safeUser};
+        return safeUser;
     }
 }
 

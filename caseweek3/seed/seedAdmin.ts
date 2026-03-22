@@ -1,4 +1,4 @@
-import { prisma } from "../src/utils/dbInstantiate.ts";
+import { prisma } from "../src/config/prisma.instantiate.js";
 import { Role } from "../src/generated/prisma/client/index.js";
 import bcrypt from "bcrypt";
 

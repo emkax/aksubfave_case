@@ -27,6 +27,7 @@ class UserRepository{
             where : {email},
             data : {role: newRole}
         });
+        
         return assignedRoleUser;        
     }
 }
