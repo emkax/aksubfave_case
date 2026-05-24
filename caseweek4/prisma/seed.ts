@@ -10,7 +10,7 @@ async function main() {
     });
 
     if (existingUser) {
-      console.log(`⚠️ User already exists: ${email}`);
+      console.log(`User already exists: ${email}`);
       return;
     }
 
